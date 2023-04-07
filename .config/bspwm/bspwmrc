@@ -1,18 +1,29 @@
 #! /bin/sh
-#kill apps
-killall lxsession
-killall sxhkd
-killall picom
-killall flameshot
+APPS="flameshot lxsession numlockx dunst picom"
+declare -A APP_LAUNCH
+for app in $APPS; do 
+ # Check if the app is running, if not, start it
+    if ! pgrep -xq "$app"; then
+        $app &
+        APP_LAUNCH[$app]=$(date +%s)
+    else
+# Check if the apps config file has been modified since the last launch
+        CONFIG_FILE=$(ps -p $(pgrep -x "$app") -o cmd= | sed "s/.*-c \([^ ]*\) .*/\1/")
+        CONFIG_LAST_MODIFIED=$(stat -c "%Y" "$CONFIG_FILE")
+        if [[ "$CONFIG_LAST_MODIFIED" -gt "${APP_LAUNCH[$app]:-0}" ]]; then
+             kill $(pgrep -x "$app")
+             $app &
+             APP_LAUNCH[$app]=$(date +%s)
+        fi
+    fi
+done 
 
-# start again apps
-sxhkd &
-lxsession &
+# startup some apps
+xsetroot -cursor_name left_ptr &
+dunst --config $HOME/.config/dunst/dunstrc &
 picom --config ~/.config/picom/picom.conf &
 easyeffects --gapplication-service &
-flameshot &
 $HOME/.config/polybar/launch.sh example &
-xsetroot -cursor_name left_ptr &
 nitrogen --restore &
 xinput --set-prop '12' 'libinput Accel Speed' -0.6 &
 pgrep -x sxhkd > /dev/null || sxhkd &
@@ -21,7 +32,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 setxkbmap -option grp:alt_shift_toggle us,lt &
 
 #workspaces
-#bspc monitor DP-0 -d I 󰊠
+#bspc monitor DP-0 -d I
 #bspc monitor DP-2 -d I II III IV V
 bspc monitor DP-0 -d 󰊠
 bspc monitor DP-2 -d 󰊠 󰊠 󰊠 󰊠 󰊠
@@ -40,7 +51,9 @@ bspc config active_border_color '#1a1b26'
 bspc config pointer_motion_interval 7ms
 bspc config single_monocle true
 
-
 # floating windows
 bspc rule -a Thunar state=floating
 bspc rule -a Pavucontrol state=floating
+
+# launch on second monitor
+bspc rule -a discord desktop=^1

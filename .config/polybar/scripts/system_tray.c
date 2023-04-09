@@ -12,7 +12,6 @@ int main() {
     fp = popen(command, "r");
 
     if (fp == NULL) {
-        printf("404\n");
         exit(1);
     }
 

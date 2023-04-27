@@ -1,19 +1,25 @@
 #! /bin/sh
 # startup
 _s() {
-	pkill -x "$1"
-	{
+	pkill -x "$(basename "$1")"
+	if [[ "$1" == "$HOME/.config/scripts/"* ]]; then
+		local filename="$(basename "$1")"
+		filename="${filename##*/}"
+		sleep 0.1
+		"$HOME/.config/$filename" &
+	else
 		sleep 0.1
 		"$@" &
-	}
+	fi
 }
 _s sxhkd
 xinput --set-prop '12' 'libinput Accel Speed' -0.6 &
 _s flameshot
-_s $HOME/.config/gpufan.sh &
 easyeffects --gapplication-service & 
-_s dunst --config $HOME/.config/dunst/dunstrc 
-_s $HOME/.config/polybar/launch.sh example 
+_s dunst --config $HOME/.config/dunst/dunstrc &
+$HOME/.config/polybar/launch.sh example &
+_s $HOME/.config/scripts/gpufan.sh &
+_s $HOME/.config/scripts/mic_boost.sh &
 
 # keyboard layout
 setxkbmap -option grp:alt_shift_toggle us,lt &

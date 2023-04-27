@@ -1,7 +1,4 @@
 #!/bin/bash
-
-# Script to control the fan speed automatically
-
 setFanSpeed() {
     nvidia-settings -a GPUFanControlState=1 -a GPUTargetFanSpeed="$1" > /dev/null
 }
@@ -36,9 +33,8 @@ fi
 
 while true; do
     # Get NVIDIA GPU temperature
-    gpuTemp=$(nvidia-settings -q gpucoretemp | grep '^  Attribute' | \
-        head -n 1 | perl -pe 's/^.*?(\d+)\.\s*$/\1/;')
-    echo -en "Current GPU temperature: $gpuTemp \r"
+    gpuTemp=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)
+    #echo -en "Current GPU temperature: $gpuTemp \r"
 
     # Set GPU fan speed
     if ((gpuTemp >= 70)); then

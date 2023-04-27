@@ -6,7 +6,7 @@ _s() {
 		local filename="$(basename "$1")"
 		filename="${filename##*/}"
 		sleep 0.1
-		"$HOME/.config/$filename" &
+		"$HOME/.config/scripts/$filename" &
 	else
 		sleep 0.1
 		"$@" &
@@ -14,12 +14,12 @@ _s() {
 }
 _s sxhkd
 xinput --set-prop '12' 'libinput Accel Speed' -0.6 &
-_s flameshot
+_s flameshot 
 easyeffects --gapplication-service & 
-_s dunst --config $HOME/.config/dunst/dunstrc &
+_s dunst --config $HOME/.config/dunst/dunstrc 
 $HOME/.config/polybar/launch.sh example &
-_s $HOME/.config/scripts/gpufan.sh &
-_s $HOME/.config/scripts/mic_boost.sh &
+_s $HOME/.config/scripts/gpufan.sh 
+_s $HOME/.config/scripts/mic_boost.sh
 
 # keyboard layout
 setxkbmap -option grp:alt_shift_toggle us,lt &

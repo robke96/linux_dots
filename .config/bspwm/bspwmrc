@@ -1,1 +1,65 @@
-/home/robke/.config/bspwm/bspwmrc
+#! /bin/sh
+# startup
+_s() {
+	pkill -x "$1"
+	{
+		sleep 0.1
+		"$@" &
+	}
+}
+
+_s picom -fb &
+_s sxhkd &
+_s lxsession &
+numlockx on &
+nitrogen --restore &
+xsetroot -cursor_name left_ptr &
+xinput --set-prop 'MSI MSI Clutch GM40 GAMING Mouse' 'libinput Accel Speed' -0.7 &
+_s flameshot &
+easyeffects --gapplication-service & 
+_s dunst --config $HOME/.config/dunst/dunstrc &
+
+killall -q gpufan.sh
+while pgrep -x gpufan.sh >/dev/null; do sleep 1; done
+$HOME/.config/scripts/gpufan.sh &
+#_s $HOME/.config/scripts/mic_boost.sh not working well atm
+
+$HOME/.config/polybar/launch.sh example &
+# keyboard layout
+setxkbmap -option grp:alt_shift_toggle us,lt &
+
+#workspaces
+bspc monitor DP-0 -d 󰊠
+bspc monitor DP-2 -d 󰊠 󰊠 󰊠 󰊠
+
+bspc config border_width         3
+bspc config window_gap          12
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      false
+bspc config top_padding 		 0
+bspc config focus_follows_pointer true
+
+bspc config focused_border_color '#8d8de0'
+bspc config normal_border_color '#1a1b26' 
+bspc config active_border_color '#1a1b26'
+
+bspc config single_monocle true
+bspc config pointer_motion_interval       5
+bspc config pointer_action1               move 
+bspc config pointer_action2               resize_side 
+bspc config pointer_action3               resize_corner
+
+# windows
+bspc rule -a Thunar state=floating
+bspc rule -a Pavucontrol state=floating
+bspc rule -a stacer state=floating
+bspc rule -a gnome-calculator state=floating
+bspc rule -a Geeqie state=floating
+bspc rule -a PrismLauncher state=floating
+bspc rule -a Polymc state=floating
+bspc rule -a qBittorrent state=floating
+bspc rule -a discord desktop=^1
+
+## Fix java applications
+export _JAVA_AWT_WM_NONREPARENTING=1

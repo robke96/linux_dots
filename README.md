@@ -5,7 +5,7 @@
 
 ## Screenshots
 
-<img src="https://i.imgur.com/OYaxfQE.jpeg">
+<img src="https://i.imgur.com/PKgNAh8.jpeg">
 
 ## Features
 
@@ -24,8 +24,8 @@
         - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
         - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
         - [zsh-autocomplete](https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df#install-plugins)
-        - [NVM - Node Version Manager (optional)](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
-        - [Bun (optional)](https://bun.sh/)
+        - [NVM - Node Version Manager](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (optional)
+        - [Bun ](https://bun.sh/) (optional)
 
 - **VSCodium:**
     - [settings.json](./codium/settings.json)
@@ -34,6 +34,9 @@
 - **Kitty:**
     - [kitty.conf](./kitty/kitty.conf)
     - [JetBrains Font Required!](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip)
+
+- **Neofetch:**
+    - [config.conf]('./neofetch/config.conf')
 
 ## Scripts
 

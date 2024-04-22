@@ -48,6 +48,3 @@
         chmod +x ./gpufan.sh
     ```
     - Add script on startup launch and you good to go.
-
-- **fixplasma.sh** 
-    - Plasma 5.27 on my system often freeze Plasma Shell, so sometimes I restart it with script.

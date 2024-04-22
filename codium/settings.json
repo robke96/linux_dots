@@ -1,9 +1,4 @@
 {
-    // "discord.detailsEditing": "📝・{current_line}/{total_lines}︱{file_size}",
-    // "discord.detailsIdling": "function AFK(🍔)",
-    // "discord.largeImageIdling": "murr 🐈",
-    // "discord.lowerDetailsEditing": "📂・{dir_name}/{file_name}",
-    // "discord.removeRemoteRepository": true,
     "editor.fontFamily": "JetBrainsMono Nerd Font",
     "explorer.confirmDelete": false,
     "editor.minimap.enabled": false,
@@ -26,5 +21,21 @@
     "code-runner.saveAllFilesBeforeRun": true,
     "security.workspace.trust.untrustedFiles": "open",
     "security.workspace.trust.banner": "never",
-    "security.workspace.trust.startupPrompt": "never"
+    "security.workspace.trust.startupPrompt": "never",
+    "vscord.app.name": "VSCodium",
+    "vscord.status.problems.enabled": false,
+    "vscord.status.details.text.debugging": "",
+    "vscord.status.image.large.idle.text": "murr 🐈",
+    "vscord.status.state.text.editing": "📂・{directory_name}/{file_name}{file_extension}",
+    "vscord.status.state.text.viewing": "📂・{directory_name}/{file_name}{file_extension}",
+    "vscord.status.details.text.editing": "📝・{current_line}/{line_count}︱{file_size}",
+    "vscord.status.details.text.viewing": "📝・{current_line}/{line_count}︱{file_size}",
+    "vscord.status.details.text.idle": "function AFK(🍔)",
+    "vscord.status.details.text.notInFile": "function notInFile(🍔)",
+    "security.workspace.trust.enabled": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.startupEditor": "none",
+    "go.toolsManagement.autoUpdate": true
 }

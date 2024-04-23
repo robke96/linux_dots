@@ -1,11 +1,11 @@
-# Dotfiles for Fedora 39 Linux with KDE (Wayland)
+# Dotfiles for Fedora 40 Linux with KDE (Wayland)
 
 ![Fedora Badge](https://img.shields.io/badge/Fedora-51A2DA?logo=fedora&logoColor=fff&style=for-the-badge) 
 ![KDE Badge](https://img.shields.io/badge/KDE-1D99F3?logo=kde&logoColor=fff&style=for-the-badge)
 
 ## Screenshots
 
-<img src="https://i.imgur.com/PKgNAh8.jpeg">
+[![2024-04-23-08-20.png](https://i.postimg.cc/T371K0kt/2024-04-23-08-20.png)](https://postimg.cc/JsXMgNCX)
 
 ## Features
 

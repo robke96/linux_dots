@@ -13,7 +13,6 @@
 - **Terminal:** [Kitty](https://github.com/kovidgoyal/kitty)
 - **Editor:** [VSCodium](https://vscodium.com/)
 - **Theme:** 
-    - [Window Decorations - Breezemite Dark](https://store.kde.org/p/1169286)
     - [Icons - Tela Dark](https://store.kde.org/p/1279924)
     - [Panel - Panel Colorizer](https://store.kde.org/p/2130967)
     - [Music on Panel - Plasmusic-toolbar](https://store.kde.org/p/2128143)

@@ -9,12 +9,8 @@ plugins=(nvm git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
+# spicetify commamnds
 export PATH=$PATH:/home/robke/.spicetify
-
-# old load nvm - node version manager
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # bun completions
 [ -s "/home/robke/.bun/_bun" ] && source "/home/robke/.bun/_bun"
@@ -23,10 +19,29 @@ export PATH=$PATH:/home/robke/.spicetify
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# android studio
+# android studio paths
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# alias for vscodium
+# alias "code" for vscodium
 alias code="codium"
+
+#alias "neofetch" for fastfetch
+alias neofetch="fastfetch"
+
+#alias "up" for check for updates
+alias up="sudo dnf5 update --refresh"
+export PATH=$HOME/.local/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/home/robke/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+#deno
+. "/home/robke/.deno/env"
+[ -s "/home/robke/.jabba/jabba.sh" ] && source "/home/robke/.jabba/jabba.sh"

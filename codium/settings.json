@@ -17,8 +17,6 @@
     "workbench.colorTheme": "One Dark Pro Darker",
     "oneDarkPro.editorTheme": "One Dark Pro Darker",
     "window.titleBarStyle": "custom",
-    "code-runner.runInTerminal": true,
-    "code-runner.saveAllFilesBeforeRun": true,
     "security.workspace.trust.untrustedFiles": "open",
     "security.workspace.trust.banner": "never",
     "security.workspace.trust.startupPrompt": "never",
@@ -30,12 +28,27 @@
     "vscord.status.state.text.viewing": "📂・{directory_name}/{file_name}{file_extension}",
     "vscord.status.details.text.editing": "📝・{current_line}/{line_count}︱{file_size}",
     "vscord.status.details.text.viewing": "📝・{current_line}/{line_count}︱{file_size}",
-    "vscord.status.details.text.idle": "function AFK(🍔)",
-    "vscord.status.details.text.notInFile": "function notInFile(🍔)",
+    "vscord.status.details.text.idle": "function Idle(🍔)",
+    "vscord.status.details.text.notInFile": "function Idle(🍔)",
     "security.workspace.trust.enabled": false,
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "workbench.startupEditor": "none",
-    "go.toolsManagement.autoUpdate": true
+    "go.toolsManagement.autoUpdate": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.codeActionsOnSave": {},
+    "vscord.status.state.debugging.enabled": false,
+    "vscord.status.buttons.button1.git.active.enabled": false,
+    "vscord.status.buttons.button1.enabled": false,
+    "vscord.status.buttons.button1.git.idle.enabled": false,
+    "vscord.status.buttons.button1.git.inactive.enabled": false,
+    "css.lint.unknownAtRules": "ignore",
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "markdown-preview-enhanced.previewColorScheme": "editorColorScheme"
 }

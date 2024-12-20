@@ -54,11 +54,11 @@
     - **[JetBrains Font Required!](https://download-cdn.jetbrains.com/fonts/JetBrainsMono-2.304.zip)**
 
 - **Fastfetch:**
-    - [config.conf]('./fastfetch/config.jsonc')
+    - [config.jsonc](./fastfetch/config.jsonc)
 
 - **KDE:**
-    - [Keyboard shortcuts]('./kde/shortcuts/kksrc')
-    - [Plasma-Panel-Colorizer preset]('./panel-colorizer/howto.md')
+    - [Keyboard shortcuts](./kde/shortcuts/kksrc)
+    - [Plasma-Panel-Colorizer preset](./kde/panel-colorizer/howto.md)
     - [PlasMusic Toolbar settings](https://i.postimg.cc/L2KZwPJG/Screenshot-20241220-091348.png)
 
 ## Scripts

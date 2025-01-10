@@ -5,7 +5,7 @@
 
 ## Screenshots
 
-![2024-04-23-08-20.png](https://i.postimg.cc/rF3Hj9Jy/Screenshot-20241220-093042.png)
+![2025-01-10.png](./.assets/20250110.webp);
 
 ## Features
 
@@ -54,6 +54,10 @@
 
 - **Fastfetch:**
     - [config.jsonc](./fastfetch/config.jsonc)
+    ```bash
+    mkdir -p ~/.config/fastfetch
+    curl -o ~/.config/fastfetch/config.jsonc https://raw.githubusercontent.com/robke96/linux_dots/refs/heads/main/fastfetch/config.jsonc
+    ```
 
 - **KDE:**
     - [Keyboard shortcuts](./kde/shortcuts/kksrc)
@@ -62,11 +66,16 @@
 
 ## Scripts
 
-- **[NVIDIA GPU FAN Control](https://github.com/UnknownSuperficialNight/nvidia-fan-control)** 
+- **[NVIDIA GPU FAN Control](https://github.com/wotikama/nvidiafan)** 
+    - Move script to safe place for example:
+        ```bash
+        mkdir -p ~/.config/scripts
+        curl -o ~/.config/scripts/nvidiafan.sh https://raw.githubusercontent.com/robke96/linux_dots/refs/heads/main/scripts/nvidiafan.sh
+        ```
+
     - Give permissions for script
         ```bash
-            chmod +x ./fancontrol.sh
-            chmod +x ./Rust-gpu-fan-control
+        chmod +x ./nvidiafan.sh
         ```
     - Configure sudo for paswordless execution
         - Edit the sudoers file using visudo:
@@ -74,9 +83,9 @@
        sudo visudo
        ```
 
-        - Add this line at the end of the file, replace `username` and `/path/to` and  with your username
+        - Add this line at the end of the file, replace `<YOUR USERNAME>` with your username
         ```bash
-        username ALL=(ALL) NOPASSWD: /path/to/Rust-gpu-fan-control
+        <YOUR USERNAME> ALL=(ALL) NOPASSWD: /usr/bin/nvidia-settings *
         ```
 
     - Add script on startup launch and you good to go. KDE Autostart

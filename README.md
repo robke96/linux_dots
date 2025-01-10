@@ -5,7 +5,7 @@
 
 ## Screenshots
 
-![2025-01-10.png](./.assets/20250110.webp);
+![2025-01-10.png](./.assets/20250110.webp)
 
 ## Features
 
@@ -75,7 +75,7 @@
 
     - Give permissions for script
         ```bash
-        chmod +x ./nvidiafan.sh
+        chmod +x ~/.config/scripts/nvidiafan.sh
         ```
     - Configure sudo for paswordless execution
         - Edit the sudoers file using visudo:
